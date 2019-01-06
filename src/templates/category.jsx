@@ -55,9 +55,6 @@ query category($id: String) {
   ) {
     edges {
       node {
-        author {
-          name
-        }
         date
         slug
         title
