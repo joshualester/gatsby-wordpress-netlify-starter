@@ -22,7 +22,7 @@ class Index extends React.Component {
               style={{ fontSize: '1.6rem' }}
               href="https://www.justinwhall.com"
             >
-            Justin W. Hall :)
+              Justin W. Hall :)
             </a>.
             {' '}You should follow him on{' '}
             <a
@@ -72,25 +72,12 @@ const MainContentContainer = styled.main`
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query IndexQuery {
-    allWordpressPost(filter: {fields: {deploy: {eq: true}}}) {
+    allWordpressPost(sort: { fields: [date] }) {
       edges {
         node {
-          date
-          slug
           title
-          modified
           excerpt
-          id
-          featured_media {
-            source_url
-          }
-          author {
-            name
-          }
-          categories {
-            name
-          }
-          content
+          slug
         }
       }
     }
